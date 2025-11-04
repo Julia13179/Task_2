@@ -2,7 +2,7 @@
 
 import pytest
 import allure
-from config.api_helper import APIHelper, create_email
+from config.api_helper import create_email
 from config.api_config import TEST_USER_DATA
 from tests.constants import (
     HTTP_STATUS_OK, HTTP_STATUS_UNAUTHORIZED,

@@ -1,7 +1,8 @@
 # Утилиты для работы с API.
 
+import time
+import random
 import requests
-import allure
 from config.api_config import BASE_URL, ENDPOINTS
 
 
@@ -109,8 +110,6 @@ class APIHelper:
 
 def create_email():
     # Создание уникального email для тестов.
-    import time
-    import random
     timestamp = int(time.time())
     random_num = random.randint(1000, 9999)
     return f"test_user_{timestamp}_{random_num}@example.com"
