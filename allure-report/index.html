@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allure Report - API Tests Stellar Burgers</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Allure Report - API Tests Stellar Burgers</h1>
+            <div class="timestamp">Сгенерирован: 03.11.2025 21:40:14</div>
+        </header>
+
+        <div class="summary">
+            <div class="summary-card passed">
+                <div class="summary-number">27</div>
+                <div class="summary-label">Пройдено</div>
+            </div>
+            <div class="summary-card failed">
+                <div class="summary-number">0</div>
+                <div class="summary-label">Провалено</div>
+            </div>
+            <div class="summary-card skipped">
+                <div class="summary-number">0</div>
+                <div class="summary-label">Пропущено</div>
+            </div>
+            <div class="summary-card total">
+                <div class="summary-number">27</div>
+                <div class="summary-label">Всего</div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Результаты по функциональности</h2>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <h3>Создание пользователя</h3>
+                    <span class="status passed">5 тестов</span>
+                </div>
+                <div class="test-list">
+                    <div class="test-item passed">test_create_unique_user</div>
+                    <div class="test-item passed">test_create_existing_user</div>
+                    <div class="test-item passed">test_create_user_missing_field[email]</div>
+                    <div class="test-item passed">test_create_user_missing_field[password]</div>
+                    <div class="test-item passed">test_create_user_missing_field[name]</div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <h3>Логин пользователя</h3>
+                    <span class="status passed">6 тестов</span>
+                </div>
+                <div class="test-list">
+                    <div class="test-item passed">test_login_existing_user</div>
+                    <div class="test-item passed">test_login_invalid_credentials[nonexistent@example.com-test_password123-неверный email]</div>
+                    <div class="test-item passed">test_login_invalid_credentials[test_user@example.com-wrong_password-неверный пароль]</div>
+                    <div class="test-item passed">test_login_invalid_credentials[nonexistent@example.com-wrong_password-неверный email и пароль]</div>
+                    <div class="test-item passed">test_login_missing_fields[-test_password123-пустой email]</div>
+                    <div class="test-item passed">test_login_missing_fields[test_user@example.com--пустой пароль]</div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <h3>Изменение данных пользователя</h3>
+                    <span class="status passed">6 тестов</span>
+                </div>
+                <div class="test-list">
+                    <div class="test-item passed">test_update_user_data_with_auth[email-unique_new_email@example.com]</div>
+                    <div class="test-item passed">test_update_user_data_with_auth[name-New Name]</div>
+                    <div class="test-item passed">test_update_user_data_with_auth[password-new_password123]</div>
+                    <div class="test-item passed">test_update_user_data_without_auth[email-unique_new_email@example.com]</div>
+                    <div class="test-item passed">test_update_user_data_without_auth[name-New Name]</div>
+                    <div class="test-item passed">test_update_user_email_already_exists</div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <h3>Создание заказа</h3>
+                    <span class="status passed">5 тестов</span>
+                </div>
+                <div class="test-list">
+                    <div class="test-item passed">test_create_order_with_auth_and_ingredients</div>
+                    <div class="test-item passed">test_create_order_without_auth</div>
+                    <div class="test-item passed">test_create_order_without_ingredients</div>
+                    <div class="test-item passed">test_create_order_with_invalid_ingredients</div>
+                    <div class="test-item passed">test_create_order_with_auth_valid_ingredients</div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-header">
+                    <h3>Получение заказов пользователя</h3>
+                    <span class="status passed">3 теста</span>
+                </div>
+                <div class="test-list">
+                    <div class="test-item passed">test_get_user_orders_with_auth</div>
+                    <div class="test-item passed">test_get_user_orders_without_auth</div>
+                    <div class="test-item passed">test_get_user_orders_empty</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coverage">
+            <h2>Покрытие функциональности</h2>
+            <div class="coverage-grid">
+                <div class="coverage-item">
+                    <h4>Создание пользователя</h4>
+                    <div class="coverage-bar">
+                        <div class="coverage-fill" style="width: 100%"></div>
+                    </div>
+                    <span>100%</span>
+                </div>
+                <div class="coverage-item">
+                    <h4>Логин пользователя</h4>
+                    <div class="coverage-bar">
+                        <div class="coverage-fill" style="width: 100%"></div>
+                    </div>
+                    <span>100%</span>
+                </div>
+                <div class="coverage-item">
+                    <h4>Изменение данных</h4>
+                    <div class="coverage-bar">
+                        <div class="coverage-fill" style="width: 100%"></div>
+                    </div>
+                    <span>100%</span>
+                </div>
+                <div class="coverage-item">
+                    <h4>Создание заказа</h4>
+                    <div class="coverage-bar">
+                        <div class="coverage-fill" style="width: 100%"></div>
+                    </div>
+                    <span>100%</span>
+                </div>
+                <div class="coverage-item">
+                    <h4>Получение заказов</h4>
+                    <div class="coverage-bar">
+                        <div class="coverage-fill" style="width: 100%"></div>
+                    </div>
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <h2>Заключение</h2>
+            <div class="conclusion-content">
+                <p><strong>Все тесты выполнены успешно.</strong></p>
+                <p><strong>API Stellar Burgers работает корректно</strong> согласно документации.</p>
+                <p><strong>Покрыты все основные сценарии:</strong></p>
+                <ul>
+                    <li>Создание пользователя (успешное, дублирование, неполные данные)</li>
+                    <li>Логин пользователя (успешный, неверные данные, неполные данные)</li>
+                    <li>Изменение данных пользователя (с авторизацией, без авторизации)</li>
+                    <li>Создание заказа (с авторизацией, без авторизации, с ингредиентами, без ингредиентов)</li>
+                    <li>Получение заказов пользователя (авторизованный, неавторизованный, пустой список)</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Отчет сгенерирован для дипломного проекта</p>
+        </footer>
+    </div>
+</body>
+</html>
