@@ -4,7 +4,7 @@ import pytest
 import allure
 from config.api_helper import APIHelper, create_email
 from config.api_config import TEST_USER_DATA
-from tests.test_constants import (
+from tests.constants import (
     HTTP_STATUS_OK, HTTP_STATUS_FORBIDDEN,
     FIELD_SUCCESS, FIELD_USER, FIELD_ACCESS_TOKEN, FIELD_REFRESH_TOKEN, FIELD_MESSAGE,
     USER_FIELD_EMAIL, USER_FIELD_PASSWORD, USER_FIELD_NAME, FIELDS,
@@ -15,14 +15,6 @@ from tests.test_constants import (
 @allure.feature("Создание пользователя")
 class TestUserCreation:
     # Тесты для эндпоинта создания пользователя.
-
-    @pytest.fixture(autouse=True)
-    def setup(self):
-        # Настройка перед каждым тестом.
-        self.api = APIHelper()
-        yield
-        # Очистка после теста
-        self.api.clear_auth()
 
     @allure.story("Успешное создание пользователя")
     @allure.title("Создать уникального пользователя")

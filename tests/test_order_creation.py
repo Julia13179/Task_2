@@ -4,7 +4,7 @@ import pytest
 import allure
 from config.api_helper import APIHelper, create_email
 from config.api_config import TEST_USER_DATA, INVALID_INGREDIENTS
-from tests.test_constants import (
+from tests.constants import (
     HTTP_STATUS_OK, HTTP_STATUS_BAD_REQUEST, HTTP_STATUS_INTERNAL_SERVER_ERROR,
     FIELD_SUCCESS, FIELD_NAME, FIELD_ORDER, FIELD_NUMBER, FIELD_MESSAGE, FIELD_DATA, FIELD_ID,
     USER_FIELD_PASSWORD, USER_FIELD_NAME,
@@ -15,26 +15,6 @@ from tests.test_constants import (
 @allure.feature("Создание заказа")
 class TestOrderCreation:
     # Тесты для эндпоинта создания заказа.
-
-    @pytest.fixture(autouse=True)
-    def setup(self):
-        # Настройка перед каждым тестом.
-        self.api = APIHelper()
-        yield
-        # Очистка после теста
-        self.api.clear_auth()
-
-    @pytest.fixture
-    def registered_user_email(self):
-        # Фикстура для создания зарегистрированного пользователя.
-        unique_email = create_email()
-        self.api.register_user(
-            email=unique_email,
-            password=TEST_USER_DATA[USER_FIELD_PASSWORD],
-            name=TEST_USER_DATA[USER_FIELD_NAME]
-        )
-        self.api.clear_auth()
-        return unique_email
 
     def _get_valid_ingredients(self):
         # Получение валидных ингредиентов для заказа.

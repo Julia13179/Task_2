@@ -4,7 +4,7 @@ import pytest
 import allure
 from config.api_helper import APIHelper, create_email
 from config.api_config import TEST_USER_DATA
-from tests.test_constants import (
+from tests.constants import (
     HTTP_STATUS_OK, HTTP_STATUS_UNAUTHORIZED, HTTP_STATUS_FORBIDDEN,
     FIELD_SUCCESS, FIELD_USER, FIELD_MESSAGE,
     USER_FIELD_EMAIL, USER_FIELD_PASSWORD, USER_FIELD_NAME,
@@ -15,26 +15,6 @@ from tests.test_constants import (
 @allure.feature("Изменение данных пользователя")
 class TestUserUpdate:
     # Тесты для эндпоинта изменения данных пользователя.
-
-    @pytest.fixture(autouse=True)
-    def setup(self):
-        # Настройка перед каждым тестом.
-        self.api = APIHelper()
-        yield
-        # Очистка после теста
-        self.api.clear_auth()
-
-    @pytest.fixture
-    def registered_user_email(self):
-        # Фикстура для создания зарегистрированного пользователя.
-        unique_email = create_email()
-        self.api.register_user(
-            email=unique_email,
-            password=TEST_USER_DATA[USER_FIELD_PASSWORD],
-            name=TEST_USER_DATA[USER_FIELD_NAME]
-        )
-        self.api.clear_auth()
-        return unique_email
 
     @allure.story("Успешное изменение данных")
     @allure.title("Изменение данных пользователя с авторизацией")

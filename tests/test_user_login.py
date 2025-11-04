@@ -4,7 +4,7 @@ import pytest
 import allure
 from config.api_helper import APIHelper, create_email
 from config.api_config import TEST_USER_DATA
-from tests.test_constants import (
+from tests.constants import (
     HTTP_STATUS_OK, HTTP_STATUS_UNAUTHORIZED,
     FIELD_SUCCESS, FIELD_USER, FIELD_ACCESS_TOKEN, FIELD_REFRESH_TOKEN, FIELD_MESSAGE,
     USER_FIELD_EMAIL, USER_FIELD_PASSWORD, USER_FIELD_NAME,
@@ -15,14 +15,6 @@ from tests.test_constants import (
 @allure.feature("Логин пользователя")
 class TestUserLogin:
     # Тесты для эндпоинта логина пользователя.
-
-    @pytest.fixture(autouse=True)
-    def setup(self):
-        # Настройка перед каждым тестом.
-        self.api = APIHelper()
-        yield
-        # Очистка после теста
-        self.api.clear_auth()
 
     @allure.story("Успешный логин")
     @allure.title("Логин под существующим пользователем")
